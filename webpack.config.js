@@ -1,6 +1,6 @@
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const path = require('path');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
@@ -8,7 +8,7 @@ module.exports = {
 
   entry: './src/index.js',
   output: {
-    filename: 'main.js',
+    filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
 
@@ -16,6 +16,21 @@ module.exports = {
   devServer: {
     contentBase: './dist'
   },
+
+  plugins: [
+    new UglifyJsPlugin(),
+    new CleanWebpackPlugin(['dist']),
+    new Dotenv(),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      inject: 'body',
+      filename: 'index.html',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true
+      }
+    }),
+  ],
 
   module: {
     rules: [
@@ -59,23 +74,5 @@ module.exports = {
     ]
   },
 
-  plugins: [
-    new HtmlWebpackPlugin({
-      inject: 'body',
-      template: './src/index.html',
-      filename: 'index.html',
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true
-      }
-    }),
-
-    new Dotenv(),
-
-    new UglifyJsPlugin(),
-
-    new CleanWebpackPlugin(['dist'])
-
-  ]
 
 };
