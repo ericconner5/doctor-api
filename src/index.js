@@ -1,5 +1,5 @@
 import $ from 'jquery';
-console.log('here');
+
 export default class Search {
   constructor(city, condition){
     if (city === undefined) {
@@ -12,10 +12,12 @@ export default class Search {
       this.condition = condition;
     }
 
-    const settings = {
+
+    const searchApi = {
       "async": true,
       "crossDomain": true,
-      "url": `https://api.betterdoctor.com?user_key=${process.env.apiKey}&location=portland,_or`,
+      "url":
+      `https://api.betterdoctor.com/2016-03-01/doctors?query=fever&location=37.773%2C-122.413%2C100&user_location=37.773%2C-122.413&skip=0&limit=10&user_key=${process.env.apiKey}`,
       "method": "GET",
       "headers": {
         "cache-control": "no-cache",
@@ -23,9 +25,9 @@ export default class Search {
       }
     }
 
-    $.ajax(settings).done(function() {
-      // console.log(response);
-    });
+    // $.ajax(settings).done(function() {
+    //   // console.log(response);
+    // });
 
     // getKelvin() {
     //   $.ajax({
