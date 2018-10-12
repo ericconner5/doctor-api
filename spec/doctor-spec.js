@@ -1,4 +1,4 @@
-import Search from './../src/index';
+import Search from './../src/business';
 
 describe('Search', function() {
 
@@ -15,7 +15,7 @@ describe('Search', function() {
     const userSearch = new Search ('city');
     expect(userSearch instanceof Search).toBe(true);
   });
-  // 
+  //
   // it('should test that an empty api condition query returns an error message', function() {
   //   const actual = userSearch.city;
   //   const control = "";
