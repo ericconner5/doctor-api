@@ -3,9 +3,10 @@ import Search from './../src/index';
 describe('Search', function() {
 
   let userSearch;
+  console.log("here" + userSearch);
 
   beforeEach(function() {
-    userSearch = new Search("userSearch", "portland");
+    userSearch = new Search("portland", "fever");
 
   });
 

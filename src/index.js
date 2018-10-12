@@ -1,10 +1,12 @@
-// import $ from 'jquery';
-
+import $ from 'jquery';
+console.log('here');
 export default class Search {
   constructor(city, condition){
     if (city === undefined) {
-      // console.log('error: no city');
+      console.log('error: no city');
       return;
+    } else if (condition === undefined) {
+      console.log('error:no condition');
     } else {
       this.city = city;
       this.condition = condition;
@@ -13,7 +15,7 @@ export default class Search {
     const settings = {
       "async": true,
       "crossDomain": true,
-      "url": "https://api.betterdoctor.com?user_key=${apiKey}&location=portland,_or",
+      "url": `https://api.betterdoctor.com?user_key=${process.env.apiKey}&location=portland,_or`,
       "method": "GET",
       "headers": {
         "cache-control": "no-cache",
