@@ -1,3 +1,3 @@
 
-importimport $ from  $ from 'jquery''jquery';;
-console.log('hey')
+import $ from 'jquery';
+console.log('hey');
