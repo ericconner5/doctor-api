@@ -1,10 +1,10 @@
-import Search from './..src/index.js';
+import Search from './../src/index';
 
 describe('Search', function() {
 
   let userSearch;
 
-  beforeEach(function () {
+  beforeEach(function() {
     userSearch = new Search("userSearch", "portland");
 
   });
@@ -12,6 +12,6 @@ describe('Search', function() {
   it('should test that an api query returns a list of portland doctors', function() {
     const actual = userSearch.city;
     const control = "portland";
-    expect(actual)toEqual(control);
+    expect(actual).toEqual(control);
   });
 });

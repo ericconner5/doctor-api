@@ -18,7 +18,9 @@ module.exports = {
   },
 
   plugins: [
-    new UglifyJsPlugin(),
+    new UglifyJsPlugin({
+      sourceMap: true
+    }),
     new CleanWebpackPlugin(['dist']),
     new Dotenv(),
     new HtmlWebpackPlugin({
