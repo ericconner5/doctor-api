@@ -1,6 +1,6 @@
 # Doctor API
 
-#### Find a doctor in your area! 12 Oct 2018_
+#### Find a doctor in your area! 12 Oct 2018
 
 #### By Eric Conner
 
@@ -20,11 +20,11 @@ Submit your location along with ailments to find a doctor nearby that deals with
 
 ## Known Bugs
 
-It doesn't work
+It doesn't work, really
 
 ## Support and contact details
 
-Contact me, Eric Conner anytime, anywhere: theluvq@gmail.com
+Contact me, Eric Conner, anytime, anywhere: theluvq@gmail.com
 
 ## Technologies Used
 

@@ -1,14 +1,14 @@
 import $ from 'jquery';
 
 export default class Search {
-  constructor(city, condition){
-    if (city === undefined) {
-      console.log('error: no city');
+  constructor(location, condition){
+    if (location === undefined) {
+      console.log('error: no location');
       return;
     } else if (condition === undefined) {
       console.log('error:no condition');
     } else {
-      this.city = city;
+      this.location = location;
       this.condition = condition;
     }
 
