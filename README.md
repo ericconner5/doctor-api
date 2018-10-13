@@ -28,7 +28,7 @@ Contact me, Eric Conner, anytime, anywhere: theluvq@gmail.com
 
 ## Technologies Used
 
-I used npm webpack, Atom text editor, Google Chrome and betterdoctor.com API software and services
+npm webpack, Atom text editor, Google Chrome and betterdoctor.com API software and services
 
 ### License
 
