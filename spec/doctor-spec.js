@@ -4,22 +4,22 @@ describe('Search', function() {
 
   let userSearch;
 
-  // beforeEach(function() {
-  //   userSearch = new Search("37.773%2C-122.413", "fever");
-  //
-  //   console.log("here " + userSearch);
-  // });
+  beforeEach(function() {
+    userSearch = new Search("37.773%2C-122.413", "fever");
+
+    console.log("before " + userSearch);
+  });
 
   it('should test that an api query returns a list of portland doctors', function() {
-    console.log(Search);
-    const userSearch = new Search ('location');
+    console.log("here " + Search);
+    // const userSearch = new Search ('location');
     expect(userSearch instanceof Search).toBe(true);
   });
 
-  it('should test that an empty api condition query returns an error message', function() {
-    const actual = '';
-    expect(actual)toReturn('error:no condition')
-  });
+  // it('should test that an empty api condition query returns an error message', function() {
+  //   const actual = '';
+  //   expect(actual)toReturn('error:no condition')
+  // });
 
 
 });
