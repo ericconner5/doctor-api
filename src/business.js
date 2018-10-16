@@ -14,7 +14,7 @@ export default class Search {
     }
 
     $.ajax({
-      url: `https://api.betterdoctor.com/2016-03-01/doctors?query=fever&location=37.773%2C-122.413%2C100&user_location=37.773%2C-122.413&skip=0&limit=10&user_key=${process.env.apiKey}`,
+      url: `https://api.betterdoctor.com/2016-03-01/doctors?query=${condition}&location=${location}&skip=0&limit=10&user_key=${apiKey}`,
       type: 'GET',
       data: {
         format: 'json'
@@ -29,6 +29,9 @@ export default class Search {
       },
     });
 
+    return Search;
+  }
+}
     // const searchApi = {
     //   "async": true,
     //   "crossDomain": true,
@@ -74,7 +77,3 @@ export default class Search {
   //     console.log('api return error');
   //   }
   // });
-
-  return Search;
-}
-}
