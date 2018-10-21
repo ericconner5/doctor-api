@@ -3,10 +3,10 @@ import { apiKey } from '../.env';
 
 export default class Search {
   constructor(location, condition){
-    if (location === undefined) {
+    if (location === '') {
       console.log('error: no location');
       return;
-    } else if (condition === undefined) {
+    } else if (condition === '') {
       console.log('error:no condition');
     } else {
       this.location = location;
@@ -14,15 +14,17 @@ export default class Search {
     }
 
     $.ajax({
-      url: `https://api.betterdoctor.com/2016-03-01/doctors?query=${condition}&location=${location}&skip=0&limit=10&user_key=${apiKey}`,
+      url: `https://api.betterdoctor.com/2016-03-01/doctors?query=${condition}location=${location}&user_key=${apiKey}`,
+
+
       type: 'GET',
       data: {
         format: 'json'
       },
       success: (response) => {
         const location = this.location;
-        console.log(this.location);
         const condition = this.condition;
+        console.log(location);
       },
       error: function() {
         console.log('api return error');
