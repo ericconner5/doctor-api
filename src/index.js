@@ -1,10 +1,5 @@
 import $ from 'jquery';
 import Search from './business.js';
-// export { location };
-// export { condition };
-
-
-
 
 $(document).ready(function() {
   $("#form").submit(function(event) {
@@ -12,8 +7,11 @@ $(document).ready(function() {
     const location = $("#location").val();
     const condition = $("#condition").val();
     const search = new Search(location, condition);
-    console.log(location + " within doc ready");
-    search.myNewSearchMethod();
+    const doctorResultsCallback = function(doctors) {
+      $('#results').text(`Here's a list of doctors in your area that can help: ${doctors.join(', ')}`)
+      console.log(search, 'after submit');
+    }
+    search.myNewSearchMethod(doctorResultsCallback);
   });
-  // $('showDoctorList').text(`Here's a list of doctors in your area that can help:  ${response.data}`)
+
 })
