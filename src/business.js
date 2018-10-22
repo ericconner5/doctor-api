@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import { apiKey } from '../.env';
 
+
 export default class Search {
   constructor(location, condition){
     if (location === '') {
@@ -12,9 +13,11 @@ export default class Search {
       this.location = location;
       this.condition = condition;
     }
-
+  }
+  myNewSearchMethod() {
+    console.log(this.location, this.condition);
     $.ajax({
-      url: `https://api.betterdoctor.com/2016-03-01/doctors?query=${condition}location=${location}&user_key=${apiKey}`,
+      url: `https://api.betterdoctor.com/2016-03-01/doctors?query=${this.condition}location=${this.location}&user_key=${apiKey}`,
 
 
       type: 'GET',
@@ -22,18 +25,21 @@ export default class Search {
         format: 'json'
       },
       success: (response) => {
-        const location = this.location;
-        const condition = this.condition;
-        console.log(location);
+        // const location = this.location;
+        // const condition = this.condition;
+        console.log(response.data);
       },
       error: function() {
         console.log('api return error');
       },
     });
 
-    return Search;
   }
 }
+
+
+
+
     // const searchApi = {
     //   "async": true,
     //   "crossDomain": true,
