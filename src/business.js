@@ -25,11 +25,13 @@ export default class Search {
         format: 'json'
       },
       success: (response) => {
-        // const location = this.location;
-        // const condition = this.condition;
-        console.log(response.data);
+        const doctors = response.data.map(function(eachDoctor) {
+          return eachDoctor.profile.first_name + ' ' +  eachDoctor.profile.last_name;
+        })
+        $('#results').text(`Here's a list of doctors in your area that can help:  ${doctors}`)
+
       },
-      error: function() {
+      error: () => {
         console.log('api return error');
       },
     });

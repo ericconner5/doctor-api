@@ -15,5 +15,5 @@ $(document).ready(function() {
     console.log(location + " within doc ready");
     search.myNewSearchMethod();
   });
-  // $('showDoctorList').text(`Here's a list of doctors in your area that can help:  ${response}`)
+  // $('showDoctorList').text(`Here's a list of doctors in your area that can help:  ${response.data}`)
 })
