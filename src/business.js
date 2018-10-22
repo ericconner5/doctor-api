@@ -28,6 +28,7 @@ export default class Search {
         doctorResultsCallback(doctors);
       },
       error: () => {
+        alert("The server is having trouble. Try again sometime.")
         console.log('api return error');
       },
     });

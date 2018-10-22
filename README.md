@@ -1,6 +1,6 @@
 # Doctor API
 
-#### Find a doctor in your area! 12 Oct 2018
+#### An Epicodus project practicing API calls. 12 Oct 2018
 
 #### By Eric Conner
 
@@ -11,18 +11,19 @@ Submit your location along with ailments to find a doctor nearby that deals with
 ## Setup/Installation Requirements
 
 * Clone the repo
-* Install npm if need be
+* Install npm
 * Install npm dependencies
 * Acquire an API key from https://developer.betterdoctor.com
-* Insert the API key into the URL in the business.js file
+* Insert the API key into the URL in the business.js file in place of this: `${apiKey}`
+* Delete `import { apiKey } from '../.env';` line at the top of business.js
 * Best viewed with Google Chrome, Atom is a great tool to edit the code to insert your API key
 
 
 ## Known Bugs
 
-It doesn't work, really
+No known bugs
 
-## Support and contact details
+## Support and contact `details`
 
 Contact me, Eric Conner, anytime, anywhere: theluvq@gmail.com
 
@@ -32,6 +33,6 @@ npm webpack, Atom text editor, Google Chrome and betterdoctor.com API software a
 
 ### License
 
-*{Determine the license under which this application can be used.  See below for more details on licensing.}*
+This software is licensed under the MIT license.
 
 Copyright (c) 2018 **Eric Conner**
